@@ -55,7 +55,7 @@ function Hero() {
         </div>
 
         <WordsPullUp
-          text="AURA"
+          text="AURUM"
           className="font-display font-black text-text-primary text-center tracking-[-0.04em] text-[26vw] md:text-[18vw] lg:text-[14vw]"
         />
 
