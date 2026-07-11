@@ -16,11 +16,11 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "AURA — Perfumería & Relojería de autor",
+  title: "AURUM — Perfumería & Relojería",
   description:
-    "AURA. Boutique premium de fragancias y relojería de autor. Piezas seleccionadas, empaque premium y envío gratis desde S/. 150.",
+    "AURUM. Boutique premium de fragancias y relojería de autor. Piezas seleccionadas, empaque premium y envío gratis desde S/. 150.",
   openGraph: {
-    title: "AURA — Perfumería & Relojería de autor",
+    title: "AURUM — Perfumería & Relojería de autor",
     description: "Fragancias y relojería de autor. Selección editorial premium.",
     type: "website",
   },
