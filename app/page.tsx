@@ -28,7 +28,7 @@ export default async function Home() {
 
 function Hero() {
   return (
-    <section className="relative h-dvh w-full overflow-hidden snap-start">
+    <section className="relative h-svh w-full overflow-hidden snap-start">
       <video
         autoPlay
         muted
@@ -85,7 +85,7 @@ function Bestsellers({
   products: Awaited<ReturnType<typeof getFeaturedProducts>>;
 }) {
   return (
-    <section className="h-dvh bg-off-white py-16 md:py-20 overflow-y-auto snap-start">
+    <section className="h-svh bg-off-white py-16 md:py-20 overflow-y-auto snap-start">
       <div className="mx-auto max-w-7xl px-6 md:px-10 h-full flex flex-col">
         <SectionHeader
           eyebrow="Selección"
@@ -117,7 +117,7 @@ const CATEGORY_ITEMS = [
 
 function Categories() {
   return (
-    <section className="h-dvh bg-background snap-start">
+    <section className="h-svh bg-background snap-start">
       <div className="h-full grid grid-cols-1 md:grid-cols-2">
         {CATEGORY_ITEMS.map((item, i) => (
           <Link

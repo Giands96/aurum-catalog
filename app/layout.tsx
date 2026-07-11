@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${unbounded.variable}`}>
-      <body className="h-dvh bg-background text-text-primary font-sans antialiased overflow-y-auto snap-y snap-mandatory">
+      <body className="h-svh bg-background text-text-primary font-sans antialiased overflow-y-auto snap-y snap-mandatory">
         <MotionProvider>
           <Navbar />
           <main>{children}</main>
