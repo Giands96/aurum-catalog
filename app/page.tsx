@@ -85,22 +85,28 @@ function Bestsellers({
   products: Awaited<ReturnType<typeof getFeaturedProducts>>;
 }) {
   return (
-    <section className="h-svh bg-off-white py-16 md:py-20 overflow-y-auto snap-start">
-      <div className="mx-auto max-w-7xl px-6 md:px-10 h-full flex flex-col">
+    <section className="h-svh bg-off-white flex flex-col py-16 md:py-20 items-center justify-center snap-start">
+      <div className="mx-auto container px-6 md:px-10 h-full flex flex-col">
         <SectionHeader
           eyebrow="Selección"
           title="Lo más vendido"
           counter={`01 — ${String(products.length || 6).padStart(2, "0")}`}
         />
-        <div className="mt-8 md:mt-10 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 flex-1 content-start">
+        <div className="items-center flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none flex-1 pb-4">
           {products.length > 0
-            ? products.map((p) => <ProductCard key={p.id} product={p} />)
+            ? products.map((p) => (
+                <div key={p.id} className="shrink-0 w-[260px] sm:w-[300px] snap-start">
+                  <ProductCard product={p} />
+                </div>
+              ))
             : Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="bg-white rounded-[32px] p-[12px] animate-pulse">
-                  <div className="h-[340px] rounded-[22px] bg-neutral-200" />
-                  <div className="px-[12px] pt-4 space-y-2">
-                    <div className="h-5 bg-neutral-200 rounded w-3/4" />
-                    <div className="h-4 bg-neutral-200 rounded w-1/2" />
+                <div key={i} className="shrink-0 w-[260px] sm:w-[300px] snap-start">
+                  <div className="bg-white rounded-[32px] p-[12px] animate-pulse">
+                    <div className="h-[340px] rounded-[22px] bg-neutral-200" />
+                    <div className="px-[12px] pt-4 space-y-2">
+                      <div className="h-5 bg-neutral-200 rounded w-3/4" />
+                      <div className="h-4 bg-neutral-200 rounded w-1/2" />
+                    </div>
                   </div>
                 </div>
               ))}
