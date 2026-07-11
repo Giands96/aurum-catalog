@@ -38,9 +38,9 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
-          {links.map((l, i) => (
+          {links.map((l) => (
             <Link
-              key={i}
+              key={l.href}
               href={l.href}
               className="text-sm text-text-secondary hover:text-text-primary transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-text-primary after:transition-[width] after:duration-300"
             >
@@ -52,6 +52,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
         
           <button
+            type="button"
             className="md:hidden p-2 text-text-primary"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
@@ -64,9 +65,9 @@ export function Navbar() {
       {open && (
         <div className="md:hidden bg-surface/95 backdrop-blur-md border-t border-line">
           <nav className="flex flex-col px-6 py-6 gap-4">
-            {links.map((l, i) => (
+            {links.map((l) => (
               <Link
-                key={i}
+                key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="text-base text-text-secondary hover:text-text-primary"

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { formatPrice } from "@/lib/currency";
 import type { ProductoConPrecio } from "@/lib/products";
@@ -15,10 +16,12 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="bg-white rounded-[32px] p-[12px] shadow-[0_12px_40px_-8px_rgba(0,0,0,0.12),0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] transition-shadow duration-400">
         <div className="relative h-[200px] sm:h-[340px] rounded-[22px] overflow-hidden bg-neutral-100">
           {product.imagen_mostrar ? (
-            <img
+            <Image
               src={product.imagen_mostrar}
               alt={product.nombre}
-              className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+              fill
+              className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+              sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-neutral-400 text-xs uppercase tracking-[0.15em]">

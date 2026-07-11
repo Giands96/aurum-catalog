@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Unbounded } from "next/font/google";
 import { Navbar } from "@/components/aura/Navbar";
 import { Footer } from "@/components/aura/Footer";
+import { MotionProvider } from "@/components/aura/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,10 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${unbounded.variable}`}>
-      <body className="min-h-screen bg-background text-text-primary font-sans antialiased flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="h-dvh bg-background text-text-primary font-sans antialiased overflow-y-auto snap-y snap-mandatory">
+        <MotionProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

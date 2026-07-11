@@ -17,7 +17,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="h-dvh bg-background text-text-primary overflow-y-auto snap-y snap-mandatory">
+    <div className="bg-background text-text-primary">
       <Hero />
       <Bestsellers products={featured} />
       <Categories />
@@ -110,15 +110,16 @@ function Bestsellers({
   );
 }
 
+const CATEGORY_ITEMS = [
+  { title: "Perfumes", sub: "Fragancias · Autor", categoria: "perfume", imagen: "/images/bleu.webp" },
+  { title: "Relojes", sub: "Piezas · Precisión", categoria: "reloj", imagen: "/images/relojes.webp" },
+];
+
 function Categories() {
-  const items = [
-    { title: "Perfumes", sub: "Fragancias · Autor", categoria: "perfume", imagen: "/images/bleu.webp" },
-    { title: "Relojes", sub: "Piezas · Precisión", categoria: "reloj", imagen: "/images/relojes.webp" },
-  ];
   return (
     <section className="h-dvh bg-background snap-start">
       <div className="h-full grid grid-cols-1 md:grid-cols-2">
-        {items.map((item, i) => (
+        {CATEGORY_ITEMS.map((item, i) => (
           <Link
             href={`/catalogo?categoria=${item.categoria}`}
             key={item.title}
@@ -150,18 +151,19 @@ function Categories() {
   );
 }
 
+const TRUST_ITEMS = [
+  { icon: Truck, label: "Envío gratis desde S/. 150" },
+  { icon: ShieldCheck, label: "Garantía de autenticidad" },
+  { icon: PackageCheck, label: "Empaque premium incluido" },
+  { icon: Headset, label: "Atención personalizada" },
+];
+
 function Trust() {
-  const items = [
-    { icon: Truck, label: "Envío gratis desde S/. 150" },
-    { icon: ShieldCheck, label: "Garantía de autenticidad" },
-    { icon: PackageCheck, label: "Empaque premium incluido" },
-    { icon: Headset, label: "Atención personalizada" },
-  ];
   return (
-    <section className="min-h-dvh bg-off-white text-background py-16 md:py-20 snap-start">
+    <section className=" bg-off-white text-background py-16 md:py-20 snap-start">
       <div className="mx-auto max-w-7xl px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-10">
-        {items.map((it, i) => (
-          <div key={i} className="flex flex-col items-start gap-4">
+        {TRUST_ITEMS.map((it) => (
+          <div key={it.label} className="flex flex-col items-start gap-4">
             <it.icon className="w-6 h-6" strokeWidth={1.4} />
             <p className="text-sm leading-relaxed text-background max-w-[22ch]">
               {it.label}

@@ -80,6 +80,7 @@ export function ProductDetailClient({
                 <div className="flex flex-wrap gap-3">
                   {variantes.map((v) => (
                     <button
+                      type="button"
                       key={v.id}
                       onClick={() => setSelectedId(v.id)}
                       className={`px-5 py-3 rounded-lg text-sm border transition-colors ${

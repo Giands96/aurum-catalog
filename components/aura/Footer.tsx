@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-surface border-t border-line">
+    <footer className="bg-surface border-t border-line snap-start">
       <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
           <div className="font-display font-black tracking-[0.35em] text-text-primary text-lg mb-4">

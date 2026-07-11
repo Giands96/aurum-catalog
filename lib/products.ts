@@ -57,17 +57,18 @@ export async function getActiveProducts(pagina = 1) {
   const from = (pagina - 1) * POR_PAGINA;
   const to = from + POR_PAGINA - 1;
 
-  const { count } = await supabase
-    .from("productos")
-    .select("*", { count: "exact", head: true })
-    .eq("activo", true);
-
-  const { data, error } = await supabase
-    .from("productos")
-    .select("*")
-    .eq("activo", true)
-    .order("created_at", { ascending: false })
-    .range(from, to);
+  const [{ count }, { data, error }] = await Promise.all([
+    supabase
+      .from("productos")
+      .select("*", { count: "exact", head: true })
+      .eq("activo", true),
+    supabase
+      .from("productos")
+      .select("*")
+      .eq("activo", true)
+      .order("created_at", { ascending: false })
+      .range(from, to),
+  ]);
 
   if (error) throw new Error(`Error al cargar productos: ${error.message}`);
 
@@ -88,19 +89,20 @@ export async function getActiveProductsByCategory(categoria: string, pagina = 1)
   const from = (pagina - 1) * POR_PAGINA;
   const to = from + POR_PAGINA - 1;
 
-  const { count } = await supabase
-    .from("productos")
-    .select("*", { count: "exact", head: true })
-    .eq("activo", true)
-    .eq("categoria", categoria);
-
-  const { data, error } = await supabase
-    .from("productos")
-    .select("*")
-    .eq("activo", true)
-    .eq("categoria", categoria)
-    .order("created_at", { ascending: false })
-    .range(from, to);
+  const [{ count }, { data, error }] = await Promise.all([
+    supabase
+      .from("productos")
+      .select("*", { count: "exact", head: true })
+      .eq("activo", true)
+      .eq("categoria", categoria),
+    supabase
+      .from("productos")
+      .select("*")
+      .eq("activo", true)
+      .eq("categoria", categoria)
+      .order("created_at", { ascending: false })
+      .range(from, to),
+  ]);
 
   if (error) throw new Error(`Error al cargar productos: ${error.message}`);
 
