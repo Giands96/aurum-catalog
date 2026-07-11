@@ -24,6 +24,15 @@ export interface ProductoVariante {
   updated_at: string;
 }
 
+export interface ProductoImagen {
+  id: number;
+  producto_id: string;
+  url: string;
+  public_id: string;
+  orden: number;
+  created_at: string;
+}
+
 export interface ConfiguracionTienda {
   id: number;
   nombre_tienda: string;
@@ -46,6 +55,11 @@ export type Database = {
         Row: ProductoVariante;
         Insert: Omit<ProductoVariante, "id" | "created_at" | "updated_at">;
         Update: Partial<Omit<ProductoVariante, "id">>;
+      };
+      producto_imagenes: {
+        Row: ProductoImagen;
+        Insert: Omit<ProductoImagen, "id" | "created_at">;
+        Update: Partial<Omit<ProductoImagen, "id">>;
       };
       configuracion_tienda: {
         Row: ConfiguracionTienda;

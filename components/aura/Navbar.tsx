@@ -26,7 +26,7 @@ export function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
         scrolled
           ? "bg-surface/85 backdrop-blur-md border-b border-line"
-          : "bg-transparent"
+          : "bg-black/20 text-white" 
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
@@ -50,15 +50,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button
-            aria-label="Carrito"
-            className="relative p-2 text-text-primary hover:text-text-secondary transition-colors"
-          >
-            <ShoppingBag className="w-5 h-5" strokeWidth={1.4} />
-            <span className="absolute -top-0.5 -right-0.5 min-w-4 h-4 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-medium flex items-center justify-center">
-              0
-            </span>
-          </button>
+        
           <button
             className="md:hidden p-2 text-text-primary"
             onClick={() => setOpen((v) => !v)}

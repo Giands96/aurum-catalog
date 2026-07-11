@@ -26,36 +26,9 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-xs uppercase tracking-[0.2em] text-text-muted mb-4">Ayuda</h4>
-          <ul className="space-y-2 text-sm text-text-secondary">
-            <li><span className="hover:text-text-primary cursor-pointer">Envíos</span></li>
-            <li><span className="hover:text-text-primary cursor-pointer">Devoluciones</span></li>
-            <li><span className="hover:text-text-primary cursor-pointer">Contacto</span></li>
-          </ul>
-        </div>
 
-        <div>
-          <h4 className="text-xs uppercase tracking-[0.2em] text-text-muted mb-4">
-            Newsletter
-          </h4>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col gap-3"
-          >
-            <input
-              type="email"
-              placeholder="tu@correo.com"
-              className="bg-transparent border-b border-line text-sm text-text-primary placeholder:text-text-muted py-2 focus:outline-none focus:border-text-primary transition-colors"
-            />
-            <button
-              type="submit"
-              className="self-start text-xs uppercase tracking-[0.2em] text-text-primary border-b border-text-primary pb-1 hover:text-surface-alt hover:border-surface-alt transition-colors"
-            >
-              Suscribirme
-            </button>
-          </form>
-        </div>
+
+        
       </div>
 
       <div className="border-t border-line">

@@ -90,6 +90,11 @@
   }
 }
 
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
 @utility grain-overlay {
   position: absolute;
   inset: 0;

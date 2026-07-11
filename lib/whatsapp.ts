@@ -5,7 +5,7 @@ interface WhatsAppParams {
 
 export function generateWhatsAppUrl({ phone, message }: WhatsAppParams): string {
   const cleaned = phone.replace(/\D/g, "");
-  return `https://wa.me/${cleaned}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${cleaned}&text=${encodeURIComponent(message)}`;
 }
 
 export function buildProductMessage(
