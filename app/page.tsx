@@ -85,17 +85,17 @@ function Bestsellers({
   products: Awaited<ReturnType<typeof getFeaturedProducts>>;
 }) {
   return (
-    <section className="h-svh bg-off-white flex flex-col py-16 md:py-20 items-center justify-center snap-start">
+    <section className="min-h-svh bg-off-white flex flex-col py-16 md:py-20 items-center justify-center snap-start">
       <div className="mx-auto container px-6 md:px-10 h-full flex flex-col">
         <SectionHeader
           eyebrow="Selección"
           title="Lo más vendido"
           counter={`01 — ${String(products.length || 6).padStart(2, "0")}`}
         />
-        <div className="items-center flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none flex-1 pb-4">
+        <div className="flex items-center gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none flex-1 py-4">
           {products.length > 0
             ? products.map((p) => (
-                <div key={p.id} className="shrink-0 w-[260px] sm:w-[300px] snap-start">
+                <div key={p.id} className="shrink-0 h-full w-[260px] sm:w-[300px] snap-start">
                   <ProductCard product={p} />
                 </div>
               ))

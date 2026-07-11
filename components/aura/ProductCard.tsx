@@ -13,7 +13,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/productos/${product.slug}`} className="block group">
-      <div className="bg-white h-full rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow duration-400">
+      <div className="bg-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow duration-400">
         <div className="relative h-64 sm:h-[340px] rounded-[22px] overflow-hidden bg-neutral-100">
           {product.imagen_mostrar ? (
             <Image
