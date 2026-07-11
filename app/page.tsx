@@ -17,7 +17,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-text-primary">
+    <div className="h-dvh bg-background text-text-primary overflow-y-auto snap-y snap-mandatory">
       <Hero />
       <Bestsellers products={featured} />
       <Categories />
@@ -28,7 +28,7 @@ export default async function Home() {
 
 function Hero() {
   return (
-    <section className="relative h-dvh w-full overflow-hidden">
+    <section className="relative h-dvh w-full overflow-hidden snap-start">
       <video
         autoPlay
         muted
@@ -56,7 +56,7 @@ function Hero() {
 
         <WordsPullUp
           text="AURUM"
-          className="font-display font-black text-text-primary text-center tracking-[-0.04em] text-[26vw] md:text-[18vw] lg:text-[14vw]"
+          className="font-display font-black text-text-primary text-center tracking-[-0.04em] text-[18vw] lg:text-[14vw] leading-60 md:leading-0"
         />
 
         <p className="text-center text-text-secondary text-sm md:text-base mt-4 md:mt-6 max-w-xl mx-auto">
@@ -85,7 +85,7 @@ function Bestsellers({
   products: Awaited<ReturnType<typeof getFeaturedProducts>>;
 }) {
   return (
-    <section className="h-dvh bg-off-white py-16 md:py-20 overflow-y-auto">
+    <section className="h-dvh bg-off-white py-16 md:py-20 overflow-y-auto snap-start">
       <div className="mx-auto max-w-7xl px-6 md:px-10 h-full flex flex-col">
         <SectionHeader
           eyebrow="Selección"
@@ -116,7 +116,7 @@ function Categories() {
     { title: "Relojes", sub: "Piezas · Precisión", categoria: "reloj", imagen: "/images/relojes.webp" },
   ];
   return (
-    <section className="h-dvh bg-background">
+    <section className="h-dvh bg-background snap-start">
       <div className="h-full grid grid-cols-1 md:grid-cols-2">
         {items.map((item, i) => (
           <Link
@@ -158,7 +158,7 @@ function Trust() {
     { icon: Headset, label: "Atención personalizada" },
   ];
   return (
-    <section className="bg-off-white text-background py-16 md:py-20">
+    <section className="min-h-dvh bg-off-white text-background py-16 md:py-20 snap-start">
       <div className="mx-auto max-w-7xl px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-10">
         {items.map((it, i) => (
           <div key={i} className="flex flex-col items-start gap-4">

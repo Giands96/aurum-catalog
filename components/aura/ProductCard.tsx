@@ -13,7 +13,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/productos/${product.slug}`} className="block group">
       <div className="bg-white rounded-[32px] p-[12px] shadow-[0_12px_40px_-8px_rgba(0,0,0,0.12),0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] transition-shadow duration-400">
-        <div className="relative h-[340px] rounded-[22px] overflow-hidden bg-neutral-100">
+        <div className="relative h-[200px] sm:h-[340px] rounded-[22px] overflow-hidden bg-neutral-100">
           {product.imagen_mostrar ? (
             <img
               src={product.imagen_mostrar}
@@ -62,14 +62,14 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
           )}
 
-          <div className="flex items-center justify-between mt-6 mb-1">
-            <div className="h-[40px] inline-flex items-center px-5 rounded-full bg-neutral-100 text-neutral-900 text-base font-bold tracking-tight">
+          <div className="flex flex-col gap-3 mt-6 mb-1 sm:flex-row sm:items-center sm:justify-between">
+            <div className="h-[40px] flex items-center justify-center px-5 rounded-full bg-neutral-100 text-neutral-900 text-base font-bold tracking-tight sm:inline-flex">
               {product.precio_desde !== null
                 ? formatPrice(product.precio_desde)
                 : "—"}
             </div>
 
-            <div className="h-[40px] inline-flex items-center gap-2 px-5 rounded-full bg-neutral-900 text-white font-semibold text-sm group-hover:scale-[1.03] transition-transform duration-300">
+            <div className="h-[40px] flex items-center justify-center gap-2 px-5 rounded-full bg-neutral-900 text-white font-semibold text-sm group-hover:scale-[1.03] transition-transform duration-300 sm:inline-flex">
               Comprar
               <span className="w-[18px] h-[18px] rounded-full bg-white flex items-center justify-center">
                 <ArrowRight className="w-2.5 h-2.5 text-neutral-900 -rotate-45" strokeWidth={2.5} />
