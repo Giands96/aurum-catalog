@@ -38,7 +38,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="px-[12px] pt-4 pb-1 flex flex-col flex-1">
-          <h3 className="text-[20px] md:text-[22px] font-bold text-neutral-900 leading-tight">
+          <h3 className="text-[20px] md:text-[22px] font-bold text-neutral-900 leading-tight overflow-hidden text-ellipsis whitespace-nowrap min-h-[28px]">
             {product.nombre}
           </h3>
 
@@ -52,16 +52,16 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
           )}
 
-          <div className="flex flex-col gap-3 mt-6 mb-1 sm:flex-row sm:items-center sm:justify-between">
-            <div className="h-[40px] flex items-center justify-center px-5 rounded-full bg-neutral-100 text-neutral-900 text-base font-bold tracking-tight sm:inline-flex">
+          <div className="flex flex-col gap-3 mt-6 mb-1 sm:flex-row sm:items-center w-full sm:justify-between">
+            <div className="h-10 flex items-center justify-center px-5 rounded-full w-full bg-neutral-100 text-neutral-900 text-xs font-regular tracking-tight sm:inline-flex">
               {product.precio_desde !== null
                 ? formatPrice(product.precio_desde)
                 : "—"}
             </div>
 
-            <div className="h-[40px] flex items-center justify-center gap-2 px-5 rounded-full bg-neutral-900 text-white font-semibold text-sm group-hover:scale-[1.03] transition-transform duration-300 sm:inline-flex">
+            <div className="h-10 flex items-center justify-center gap-2 px-4 rounded-full bg-neutral-900 text-white font-semibold text-sm group-hover:scale-[1.03] transition-transform duration-300 sm:inline-flex">
               Comprar
-              <span className="w-[18px] h-[18px] rounded-full bg-white flex items-center justify-center">
+              <span className="w-4.5 h-4.5 rounded-full bg-white flex items-center justify-center">
                 <ArrowRight
                   className="w-2.5 h-2.5 text-neutral-900 -rotate-45"
                   strokeWidth={2.5}
