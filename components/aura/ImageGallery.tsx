@@ -68,7 +68,7 @@ export function ImageGallery({ images, fallbackUrl, alt }: Props) {
               type="button"
               key={url}
               onClick={() => setCurrent(i)}
-              className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
+              className={`shrink-0 relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                 i === current ? "border-text-primary" : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
