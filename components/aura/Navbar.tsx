@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import Aurum from "@/public/images/logo-aurum.webp";
 
 const links = [
   { href: "/", label: "Inicio" },
@@ -34,7 +36,13 @@ export function Navbar() {
           href="/"
           className="font-display font-black tracking-[0.35em] text-text-primary text-base md:text-lg"
         >
-          AURUM
+          <Image
+          src={Aurum}
+          alt="Logo"
+          width={120}
+          height={40}
+          className="object-contain"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">

@@ -60,7 +60,7 @@ function Hero() {
         />
 
         <p className="text-center text-text-secondary text-sm md:text-base mt-4 md:mt-6 max-w-xl mx-auto">
-          Fragancias y relojería de autor. Selección editorial, serena, precisa.
+          Fragancia y relojería 100% originales
         </p>
 
         <div className="flex justify-center mt-8 md:mt-10">
@@ -72,7 +72,7 @@ function Hero() {
 
       <div className="absolute bottom-8 inset-x-0 z-10 flex items-center justify-between px-6 md:px-10 text-[10px] uppercase tracking-[0.3em] text-text-muted">
         <span>Lima &middot; Perú</span>
-        <span className="hidden md:block">Envío gratis en compra de relojes</span>
+        <span className="hidden md:block">Envío a todo el Perú</span>
         <span>01 / 04</span>
       </div>
     </section>
