@@ -99,7 +99,7 @@ function Bestsellers({
                   <ProductCard product={p} />
                 </div>
               ))
-            : Array.from({ length: 3 }).map((_, i) => (
+            : Array.from({ length: 6 }).map((_, i) => (
                 <div key={i} className="shrink-0 w-[260px] sm:w-[300px] snap-start">
                   <div className="bg-white rounded-[32px] p-[12px] animate-pulse">
                     <div className="h-[340px] rounded-[22px] bg-neutral-200" />
@@ -158,7 +158,7 @@ function Categories() {
 }
 
 const TRUST_ITEMS = [
-  { icon: Truck, label: "Envío gratis desde S/. 150" },
+  { icon: Truck, label: "Envío gratis en compra de relojes" },
   { icon: ShieldCheck, label: "Garantía de autenticidad" },
   { icon: PackageCheck, label: "Empaque premium incluido" },
   { icon: Headset, label: "Atención personalizada" },
