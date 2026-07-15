@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/aura/ProductCard";
 import { getFeaturedProducts } from "@/lib/products";
 import Perfume from "@/public/images/bleu.webp"
 import Reloj from "@/public/images/relojes.webp"
+import { LogoPullUp } from "@/components/aura/LogoPullUp";
 
 export default async function Home() {
   let featured: Awaited<ReturnType<typeof getFeaturedProducts>> = [];
@@ -54,10 +55,7 @@ function Hero() {
           Edición Otoño &middot; MMXXVI
         </div>
 
-        <WordsPullUp
-          text="AURUM"
-          className="font-display font-black text-text-primary text-center tracking-[-0.04em] text-[18vw] lg:text-[14vw] leading-60 md:leading-0"
-        />
+        <LogoPullUp className="mx-auto" delay={0.2} />
 
         <p className="text-center text-text-secondary text-sm md:text-base mt-4 md:mt-6 max-w-xl mx-auto">
           Fragancia y relojería 100% originales
