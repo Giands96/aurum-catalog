@@ -32,8 +32,8 @@ export function LogoPullUp({ className, delay = 0 }: LogoPullUpProps) {
             src={AurumLogo}
             alt=""
             width={1200}
-            height={400}
-            className="object-contain"
+            height={350}
+            className=" w-full h-auto"
             priority
           />
         </motion.span>
