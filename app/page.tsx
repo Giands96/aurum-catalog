@@ -72,7 +72,7 @@ function Hero() {
 
       <div className="absolute bottom-8 inset-x-0 z-10 flex items-center justify-between px-6 md:px-10 text-[10px] uppercase tracking-[0.3em] text-text-muted">
         <span>Lima &middot; Perú</span>
-        <span className="hidden md:block">Envío gratis en todo tipo de relojes</span>
+        <span className="hidden md:block">Envío gratis en compra de relojes</span>
         <span>01 / 04</span>
       </div>
     </section>
